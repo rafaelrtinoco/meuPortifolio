@@ -1,0 +1,109 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 32px;
+  height: 32px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url(/img/icons/file-code.svg);
+}
+
+.header .photo {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+.header .title {
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.informations {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.informations p {
+  margin: 0.5rem;
+  font-size: 1rem;
+}
+
+.informations p::before {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: 1.2rem;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+  margin-bottom: 1rem;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.informations .avatar {
+  background-image: url("/img/icons/person.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.informations .endereco {
+  background-image: url("/img/icons/marcador.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.informations .whatsapp {
+  background-image: url("/img/icons/whatsapp.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.informations .cartinha {
+  background-image: url("/img/icons/envelope.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+@media only screen and (min-width: 768px) {
+  .header {
+    display: grid;
+    grid-template-areas:
+      "photo title"
+      "photo information";
+  }
+
+  .header .photo {
+    grid-area: photo;
+    margin: 0 auto;
+  }
+
+  .header .title {
+    grid-area: title;
+    text-align: start;
+    max-width: 240px;
+  }
+
+  .header .information {
+    grid-area: information;
+  }
+}
